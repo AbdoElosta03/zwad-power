@@ -14,7 +14,7 @@ export default function Page() {
     <main className="overflow-x-hidden">
       <SiteHeader />
       <Hero />
-      <BenefitsBar />
+      {/* <BenefitsBar /> */}
       <HowItWorks />
       <PrimoPayment />
       <Stations />

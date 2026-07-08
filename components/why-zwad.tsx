@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Backpack, Clock, GraduationCap, Sparkles } from 'lucide-react'
+import { Backpack, BatteryCharging, Clock, GraduationCap, Sparkles } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const reasons = [
@@ -19,7 +19,7 @@ const reasons = [
     desc: 'خذ الباوربانك في ثوانٍ وأعده في أي محطة تناسبك.',
   },
   {
-    icon: Sparkles,
+    icon: BatteryCharging,
     title: 'تجربة شحن ذكية',
     desc: 'ابقَ متصلاً ومشحوناً أثناء تنقلك في كل مكان.',
   },

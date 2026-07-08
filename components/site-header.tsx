@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { useTheme } from 'next-themes'
-import { Download, Menu, Moon, Sun, X } from 'lucide-react'
+import { CloseIcon, DownloadIcon, MenuIcon } from '@/components/icons'
 import { cn } from '@/lib/utils'
 import { smoothScrollTo } from '@/lib/smooth-scroll'
 
@@ -15,27 +14,6 @@ const links = [
   { label: 'الأسئلة الشائعة', href: '#faq' },
   { label: 'تواصل معنا', href: '#contact' },
 ]
-
-function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
-
-  const isDark = mounted ? resolvedTheme === 'dark' : true
-
-  return (
-    <button
-      type="button"
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="grid size-10 place-items-center rounded-xl border border-white/20 bg-white/5 text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-      aria-label={isDark ? 'التبديل إلى الوضع الفاتح' : 'التبديل إلى الوضع الداكن'}
-      suppressHydrationWarning
-    >
-      {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
-    </button>
-  )
-}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -102,7 +80,7 @@ export function SiteHeader() {
             onClick={(e) => handleNav(e, '#download')}
             className="hidden items-center gap-2 rounded-xl bg-emerald px-5 py-2.5 text-sm font-bold text-white shadow-neon transition-transform duration-200 hover:-translate-y-0.5 sm:flex"
           >
-            <Download className="size-4" />
+            <DownloadIcon className="size-4" />
             حمّل التطبيق
           </a>
           <button
@@ -112,7 +90,7 @@ export function SiteHeader() {
             aria-label={open ? 'إغلاق القائمة' : 'فتح القائمة'}
             aria-expanded={open}
           >
-            {open ? <X className="size-6" /> : <Menu className="size-6" />}
+            {open ? <CloseIcon className="size-6" /> : <MenuIcon className="size-6" />}
           </button>
         </div>
       </div>
@@ -139,7 +117,7 @@ export function SiteHeader() {
             onClick={(e) => handleNav(e, '#download')}
             className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-emerald px-5 py-3 text-sm font-bold text-white"
           >
-            <Download className="size-4" />
+            <DownloadIcon className="size-4" />
             حمّل التطبيق
           </a>
         </nav>
