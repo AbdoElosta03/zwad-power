@@ -1,0 +1,425 @@
+{
+  "config": {
+    "defaultLocale": "ar",
+    "locales": {
+      "ar": {
+        "label": "العربية",
+        "dir": "rtl",
+        "lang": "ar"
+      },
+      "en": {
+        "label": "English",
+        "dir": "ltr",
+        "lang": "en"
+      }
+    }
+  },
+  "messages": {
+    "ar": {
+      "metadata": {
+        "title": "ZWAD | زوّد وإنطلق — خدمة تأجير الباوربانك الذكية",
+        "description": "ZWAD خدمة ذكية لاستئجار الباوربانك من أقرب محطة، استخدمه أثناء التنقل ثم أرجعه في أي محطة قريبة. الدفع بسهولة وأمان عبر تطبيق Primo."
+      },
+      "common": {
+        "brand": "ZWAD",
+        "downloadApp": "حمّل التطبيق",
+        "learnHow": "اعرف كيف تعمل",
+        "primo": "Primo Tech"
+      },
+      "header": {
+        "ariaHome": "ZWAD الصفحة الرئيسية",
+        "ariaOpenMenu": "فتح القائمة",
+        "ariaCloseMenu": "إغلاق القائمة",
+        "nav": {
+          "home": "الرئيسية",
+          "how": "كيف تعمل",
+          "stations": "محطاتنا",
+          "primo": "التطبيق والدفع",
+          "faq": "الأسئلة الشائعة",
+          "contact": "تواصل معنا"
+        }
+      },
+      "hero": {
+        "badge": "زوّد وإنطلق · التطبيق الخدمي الأوّل في ليبيا",
+        "title": "شن أكثر حاجة تضايقك وانت برا؟",
+        "titleHighlight": "زوّاد جاي بيحلها",
+        "description": "خدمة ذكية لاستئجار الباوربانك من أقرب محطة ZWAD، واستخدامه أثناء التنقل، ثم إرجاعه في أي محطة قريبة. الدفع بسهولة وأمان عبر تطبيق Primo.",
+        "imageAlt": "محطة ZWAD وتطبيقها مع الباوربانك ورمز QR"
+      },
+      "benefits": {
+        "items": [
+          {
+            "title": "وصول سريع",
+            "desc": "باوربانك جاهز خلال ثوانٍ"
+          },
+          {
+            "title": "محطات قريبة منك",
+            "desc": "آلاف المحطات في ليبيا"
+          },
+          {
+            "title": "دفع سهل وآمن",
+            "desc": "عبر تطبيق Primo"
+          },
+          {
+            "title": "شحن متعدد المنافذ",
+            "desc": "منافذ متعددة لأجهزتك"
+          }
+        ]
+      },
+      "howItWorks": {
+        "eyebrow": "خطوات بسيطة",
+        "title": "كيف تعمل الخدمة؟",
+        "subtitle": "أربع خطوات فقط تفصلك عن الشحن الذكي أينما كنت.",
+        "steps": [
+          {
+            "title": "امسح رمز QR",
+            "desc": "ابحث عن أقرب محطة ZWAD وامسح رمز QR أو أدخل الرقم التسلسلي للمحطة."
+          },
+          {
+            "title": "ادفع عبر تطبيق Primo",
+            "desc": "يتم خصم القيمة من محفظتك في تطبيق Primo بكل أمان وسهولة."
+          },
+          {
+            "title": "استلم الباوربانك",
+            "desc": "اختر منفذاً متاحاً واستخرج الباوربانك لتبقى على اتصال دائم."
+          },
+          {
+            "title": "أعده في أي محطة",
+            "desc": "أعد الباوربانك في أي محطة ZWAD قريبة منك وانتهى الأمر."
+          }
+        ]
+      },
+      "primo": {
+        "badge": "طريقة الدفع الرسمية",
+        "title": "الدفع يتم عبر تطبيق Primo Tech`",
+        "description": "كل العمليات تتم داخل تطبيق Primo Tech بكل أمان. امسح الرمز، اختر منفذاً، ادفع، واستلم الباوربانك في خطوات بسيطة وواضحة.",
+        "desktopImageAlt": "شاشة رصيد Primo على الحاسوب",
+        "mobileImageAlt": "شاشة رصيد Primo على الهاتف",
+        "features": [
+          {
+            "title": "تسعير واضح",
+            "desc": "بدون رسوم خفية"
+          },
+          {
+            "title": "رصيدك في أمان",
+            "desc": "خصم من محفظتك فقط"
+          },
+          {
+            "title": "آمن وسريع",
+            "desc": "معتمد من Primo Tech"
+          }
+        ]
+      },
+      "stations": {
+        "eyebrow": "تغطية واسعة",
+        "title": "محطات قريبة منك",
+        "description": "ابحث عن أقرب محطة ZWAD وتحقق من توفر الباوربانك قبل الانطلاق. محطاتنا منتشرة في المولات والمقاهي والمطارات والأماكن العامة في كل أنحاء ليبيا.",
+        "cta": "عرض المحطات على الخريطة",
+        "activeCount": "+1000",
+        "activeLabel": "محطة نشطة",
+        "mapStations": [
+          { "label": "طرابلس المركز" },
+          { "label": "حي الأندلس" },
+          { "label": "شارع الجمهورية" },
+          { "label": "سوق الثلاثاء" },
+          { "label": "باب البحر" }
+        ]
+      },
+      "whyZwad": {
+        "eyebrow": "لماذا ZWAD؟",
+        "title": "الشحن الذكي أثناء التنقل",
+        "description": "صُممت خدمة ZWAD لتمنحك حرية الحركة دون قلق من نفاد البطارية، بأسلوب عصري يناسب إيقاع حياتك اليومي.",
+        "reasons": [
+          {
+            "title": "لا حاجة لحمل الباوربانك",
+            "desc": "استأجر عند الحاجة فقط دون أن تحمل جهازك الخاص طوال الوقت."
+          },
+          {
+            "title": "مثالي للجميع",
+            "desc": "للطلاب والمسافرين والموظفين وكل من هو دائم التنقل."
+          },
+          {
+            "title": "استلام سريع وإرجاع مرن",
+            "desc": "خذ الباوربانك في ثوانٍ وأعده في أي محطة تناسبك."
+          },
+          {
+            "title": "تجربة شحن ذكية",
+            "desc": "ابقَ متصلاً ومشحوناً أثناء تنقلك في كل مكان."
+          }
+        ],
+        "scenes": [
+          { "alt": "أشخاص يستخدمون باوربانك ZWAD في مقهى" },
+          { "alt": "محطة ZWAD داخل مركز تجاري" },
+          { "alt": "أشخاص يستخدمون باوربانك ZWAD في الشاطئ" }
+        ]
+      },
+      "faq": {
+        "eyebrow": "هل لديك سؤال؟",
+        "title": "الأسئلة الشائعة",
+        "items": [
+          {
+            "q": "كيف أستأجر باوربانك من محطة؟",
+            "a": "ابحث عن أقرب محطة ZWAD، امسح رمز QR الموجود على شاشة المحطة أو أدخل الرقم التسلسلي، ثم ادفع عبر تطبيق Primo واستلم الباوربانك من المنفذ المتاح."
+          },
+          {
+            "q": "هل يمكنني إرجاع الباوربانك إلى محطة أخرى؟",
+            "a": "نعم، يمكنك إرجاع الباوربانك إلى أي محطة ZWAD قريبة منك دون الحاجة للعودة إلى نفس المحطة التي استأجرت منها."
+          },
+          {
+            "q": "كيف تتم عملية الدفع؟",
+            "a": "تتم جميع عمليات الدفع بشكل آمن داخل تطبيق Primo، حيث يتم خصم القيمة من محفظتك مباشرة عند بدء الاستخدام."
+          },
+          {
+            "q": "كم تكلفة استخدام الخدمة؟",
+            "a": "التسعير واضح وبدون رسوم خفية، ويتم احتسابه حسب مدة الاستخدام مع حد يومي أقصى. يمكنك الاطلاع على التفاصيل داخل التطبيق قبل بدء الاستئجار."
+          },
+          {
+            "q": "ماذا يحدث إذا أعدت الباوربانك في وقت متأخر؟",
+            "a": "يتم احتساب رسوم إضافية بسيطة حتى الوصول للحد اليومي الأقصى، وبعدها تُطبّق قيمة استبدال الباوربانك وفق شروط الخدمة الموضّحة في التطبيق."
+          }
+        ]
+      },
+      "finalCta": {
+        "title": "لو شحنك قريب يكمل",
+        "titleLine2": "الحل قريب منك",
+        "titleHighlight": "ZWAD؟",
+        "description": "حمّل التطبيق الآن وخليك مشحون أينما كنت. زوّد وإنطلق مع أقرب محطة إليك.",
+        "findStation": "اعثر على أقرب محطة",
+        "phoneImageAlt": "تطبيق ZWAD على الهاتف بجانب محطة الشحن",
+        "qrImageAlt": "ادفع بمسح رمز QR داخل تطبيق ZWAD"
+      },
+      "footer": {
+        "description": "شبكة ذكية لاستئجار الباوربانك في ليبيا. طاقة تدوم، أينما كنت. زوّد وإنطلق.",
+        "quickLinksTitle": "روابط سريعة",
+        "infoTitle": "معلومات",
+        "contactTitle": "تواصل معنا",
+        "aboutZwad": "عن ZWAD",
+        "address": "ليبيا طرابلس - طريق الشط",
+        "copyright": "© 2026 ZWAD. جميع الحقوق محفوظة.",
+        "social": {
+          "instagram": "Instagram",
+          "facebook": "Facebook"
+        }
+      },
+      "storeBadges": {
+        "googlePlayAria": "حمّل التطبيق من Google Play",
+        "appStoreAria": "حمّل التطبيق من App Store",
+        "googlePlayTop": "GET IT ON",
+        "googlePlayBottom": "Google Play",
+        "appStoreTop": "Download on the",
+        "appStoreBottom": "App Store"
+      },
+      "primoStoreBadges": {
+        "googlePlayAria": "حمّل PrimoTech من Google Play",
+        "appStoreAria": "حمّل PrimoTech من App Store",
+        "googlePlayTop": "GET IT ON",
+        "googlePlayBottom": "Google Play",
+        "appStoreTop": "Download on the",
+        "appStoreBottom": "App Store"
+      }
+    },
+    "en": {
+      "metadata": {
+        "title": "ZWAD | Charge Up & Go — Smart Power Bank Rental",
+        "description": "ZWAD is a smart service to rent a power bank from the nearest station, use it on the go, and return it at any nearby station. Pay easily and securely through the Primo app."
+      },
+      "common": {
+        "brand": "ZWAD",
+        "downloadApp": "Download the App",
+        "learnHow": "See How It Works",
+        "primo": "Primo"
+      },
+      "header": {
+        "ariaHome": "ZWAD Home",
+        "ariaOpenMenu": "Open menu",
+        "ariaCloseMenu": "Close menu",
+        "nav": {
+          "home": "Home",
+          "how": "How It Works",
+          "stations": "Our Stations",
+          "primo": "App & Payment",
+          "faq": "FAQ",
+          "contact": "Contact Us"
+        }
+      },
+      "hero": {
+        "badge": "Charge Up & Go · Libya's First Service App",
+        "title": "What's the most annoying thing when you're out?",
+        "titleHighlight": "ZWAD is here to fix it",
+        "description": "A smart service to rent a power bank from the nearest ZWAD station, use it on the go, and return it at any nearby station. Pay easily and securely through the Primo app.",
+        "imageAlt": "ZWAD station and app with power bank and QR code"
+      },
+      "benefits": {
+        "items": [
+          {
+            "title": "Instant Access",
+            "desc": "A ready power bank in seconds"
+          },
+          {
+            "title": "Stations Near You",
+            "desc": "Thousands of stations across Libya"
+          },
+          {
+            "title": "Easy & Secure Payment",
+            "desc": "Through the Primo app"
+          },
+          {
+            "title": "Multi-Port Charging",
+            "desc": "Multiple ports for your devices"
+          }
+        ]
+      },
+      "howItWorks": {
+        "eyebrow": "Simple Steps",
+        "title": "How Does It Work?",
+        "subtitle": "Just four steps stand between you and smart charging wherever you are.",
+        "steps": [
+          {
+            "title": "Scan the QR Code",
+            "desc": "Find the nearest ZWAD station and scan the QR code or enter the station serial number."
+          },
+          {
+            "title": "Pay via Primo",
+            "desc": "The amount is deducted from your Primo wallet safely and easily."
+          },
+          {
+            "title": "Pick Up the Power Bank",
+            "desc": "Choose an available port and take the power bank to stay connected."
+          },
+          {
+            "title": "Return at Any Station",
+            "desc": "Return the power bank at any nearby ZWAD station — that's it."
+          }
+        ]
+      },
+      "primo": {
+        "badge": "Official Payment Method",
+        "title": "Payment Is Made Through Primo",
+        "description": "All transactions happen securely inside the Primo app. Scan the code, choose a port, pay, and pick up your power bank in simple, clear steps.",
+        "desktopImageAlt": "Primo balance screen on desktop",
+        "mobileImageAlt": "Primo balance screen on mobile",
+        "features": [
+          {
+            "title": "Clear Pricing",
+            "desc": "No hidden fees"
+          },
+          {
+            "title": "Your Balance Is Safe",
+            "desc": "Charged only from your wallet"
+          },
+          {
+            "title": "Fast & Secure",
+            "desc": "Powered by Primo"
+          }
+        ]
+      },
+      "stations": {
+        "eyebrow": "Wide Coverage",
+        "title": "Stations Near You",
+        "description": "Find the nearest ZWAD station and check power bank availability before you head out. Our stations are located in malls, cafés, airports, and public places across Libya.",
+        "cta": "View Stations on the Map",
+        "activeCount": "+1000",
+        "activeLabel": "Active Stations",
+        "mapStations": [
+          { "label": "Tripoli Center" },
+          { "label": "Al Andalus District" },
+          { "label": "Republic Street" },
+          { "label": "Souq Al Thulatha" },
+          { "label": "Bab Al Bahr" }
+        ]
+      },
+      "whyZwad": {
+        "eyebrow": "Why ZWAD?",
+        "title": "Smart Charging on the Go",
+        "description": "ZWAD is designed to give you freedom of movement without worrying about a dead battery — in a modern way that fits your daily rhythm.",
+        "reasons": [
+          {
+            "title": "No Need to Carry a Power Bank",
+            "desc": "Rent only when you need it — no need to carry your own device all day."
+          },
+          {
+            "title": "Perfect for Everyone",
+            "desc": "For students, travelers, professionals, and anyone always on the move."
+          },
+          {
+            "title": "Quick Pickup & Flexible Return",
+            "desc": "Grab a power bank in seconds and return it at any station that suits you."
+          },
+          {
+            "title": "A Smart Charging Experience",
+            "desc": "Stay connected and charged wherever you go."
+          }
+        ],
+        "scenes": [
+          { "alt": "People using a ZWAD power bank at a café" },
+          { "alt": "ZWAD station inside a shopping mall" },
+          { "alt": "People using a ZWAD power bank at the beach" }
+        ]
+      },
+      "faq": {
+        "eyebrow": "Have a Question?",
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "How do I rent a power bank from a station?",
+            "a": "Find the nearest ZWAD station, scan the QR code on the station screen or enter the serial number, then pay through the Primo app and pick up the power bank from the available port."
+          },
+          {
+            "q": "Can I return the power bank to a different station?",
+            "a": "Yes. You can return the power bank to any nearby ZWAD station without going back to the one you rented from."
+          },
+          {
+            "q": "How does payment work?",
+            "a": "All payments are processed securely inside the Primo app, with the amount deducted from your wallet when you start using the service."
+          },
+          {
+            "q": "How much does the service cost?",
+            "a": "Pricing is transparent with no hidden fees, calculated by usage duration with a daily cap. You can view the details in the app before renting."
+          },
+          {
+            "q": "What happens if I return the power bank late?",
+            "a": "A small additional fee applies until the daily cap is reached, after which a power bank replacement fee applies according to the service terms shown in the app."
+          }
+        ]
+      },
+      "finalCta": {
+        "title": "Battery running low?",
+        "titleLine2": "The solution is right near you —",
+        "titleHighlight": "ZWAD?",
+        "description": "Download the app now and stay charged wherever you are. Charge up and go with the nearest station to you.",
+        "findStation": "Find the Nearest Station",
+        "phoneImageAlt": "ZWAD app on phone next to a charging station",
+        "qrImageAlt": "Pay by scanning a QR code inside the ZWAD app"
+      },
+      "footer": {
+        "description": "A smart power bank rental network in Libya. Power that lasts, wherever you are. Charge up and go.",
+        "quickLinksTitle": "Quick Links",
+        "infoTitle": "Information",
+        "contactTitle": "Contact Us",
+        "aboutZwad": "About ZWAD",
+        "address": "Tripoli, Libya — Al Shat Road",
+        "copyright": "© 2024 ZWAD. All rights reserved.",
+        "social": {
+          "instagram": "Instagram",
+          "facebook": "Facebook"
+        }
+      },
+      "storeBadges": {
+        "googlePlayAria": "Download the app from Google Play",
+        "appStoreAria": "Download the app from the App Store",
+        "googlePlayTop": "GET IT ON",
+        "googlePlayBottom": "Google Play",
+        "appStoreTop": "Download on the",
+        "appStoreBottom": "App Store"
+      },
+      "primoStoreBadges": {
+        "googlePlayAria": "Download PrimoTech from Google Play",
+        "appStoreAria": "Download PrimoTech from the App Store",
+        "googlePlayTop": "GET IT ON",
+        "googlePlayBottom": "Google Play",
+        "appStoreTop": "Download on the",
+        "appStoreBottom": "App Store"
+      }
+    }
+  }
+}

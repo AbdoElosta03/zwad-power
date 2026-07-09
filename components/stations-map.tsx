@@ -5,12 +5,12 @@ import L from 'leaflet'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
-const stations = [
-  { lat: 32.8867, lng: 13.1816, label: 'طرابلس المركز' },
-  { lat: 32.8745, lng: 13.2088, label: 'حي الأندلس' },
-  { lat: 32.8812, lng: 13.1874, label: 'شارع الجمهورية' },
-  { lat: 32.8589, lng: 13.2286, label: 'سوق الثلاثاء' },
-  { lat: 32.9084, lng: 13.1789, label: 'باب البحر' },
+const stationCoords = [
+  { lat: 32.8867, lng: 13.1816 },
+  { lat: 32.8745, lng: 13.2088 },
+  { lat: 32.8812, lng: 13.1874 },
+  { lat: 32.8589, lng: 13.2286 },
+  { lat: 32.9084, lng: 13.1789 },
 ] as const
 
 const TRIPOLI_CENTER: [number, number] = [32.8872, 13.1913]
@@ -35,13 +35,28 @@ function createPinIcon(label: string) {
   })
 }
 
-export function StationsMap() {
+type StationsMapProps = {
+  stations: { label: string }[]
+  activeCount: string
+  activeLabel: string
+}
+
+export function StationsMap({ stations, activeCount, activeLabel }: StationsMapProps) {
+  const mapStations = useMemo(
+    () =>
+      stationCoords.map((coords, i) => ({
+        ...coords,
+        label: stations[i]?.label ?? '',
+      })),
+    [stations],
+  )
+
   const icons = useMemo(
     () =>
       Object.fromEntries(
-        stations.map((station) => [station.label, createPinIcon(station.label)])
+        mapStations.map((station) => [station.label, createPinIcon(station.label)]),
       ),
-    []
+    [mapStations],
   )
 
   return (
@@ -50,13 +65,13 @@ export function StationsMap() {
         center={TRIPOLI_CENTER}
         zoom={13}
         scrollWheelZoom={false}
+        attributionControl={false}
         className="zwad-stations-map h-full w-full"
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
-        {stations.map((station) => (
+        {mapStations.map((station) => (
           <Marker
             key={station.label}
             position={[station.lat, station.lng]}
@@ -69,9 +84,9 @@ export function StationsMap() {
         ))}
       </MapContainer>
 
-      <div className="pointer-events-none absolute bottom-4 right-4 z-[1000] rounded-xl border border-white/10 bg-brand-deep/90 px-4 py-2 text-right shadow-lg backdrop-blur-sm">
-        <p className="font-display text-lg font-black text-neon">+1000</p>
-        <p className="text-[11px] font-medium text-white/70">محطة نشطة</p>
+      <div className="pointer-events-none absolute bottom-4 end-4 z-[1000] rounded-xl border border-white/10 bg-brand-deep/90 px-4 py-2 text-start shadow-lg backdrop-blur-sm">
+        <p className="font-display text-lg font-black text-neon">{activeCount}</p>
+        <p className="text-[11px] font-medium text-white/70">{activeLabel}</p>
       </div>
     </div>
   )

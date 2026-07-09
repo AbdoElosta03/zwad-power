@@ -8,20 +8,23 @@ import { WhyZwad } from '@/components/why-zwad'
 import { Faq } from '@/components/faq'
 import { FinalCta } from '@/components/final-cta'
 import { SiteFooter } from '@/components/site-footer'
+import { getLocaleData } from '@/lib/i18n-server'
 
-export default function Page() {
+export default async function Page() {
+  const { locale, messages } = await getLocaleData()
+
   return (
     <main className="overflow-x-hidden">
-      <SiteHeader />
-      <Hero />
-      {/* <BenefitsBar /> */}
-      <HowItWorks />
-      <PrimoPayment />
-      <Stations />
-      <WhyZwad />
-      <Faq />
-      <FinalCta />
-      <SiteFooter />
+      <SiteHeader locale={locale} messages={messages} />
+      <Hero locale={locale} messages={messages} />
+      {/* <BenefitsBar messages={messages} /> */}
+      <HowItWorks locale={locale} messages={messages} />
+      <PrimoPayment messages={messages} />
+      <Stations messages={messages} />
+      <WhyZwad messages={messages} />
+      <Faq messages={messages} />
+      <FinalCta messages={messages} />
+      <SiteFooter messages={messages} />
     </main>
   )
 }

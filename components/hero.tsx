@@ -1,9 +1,13 @@
 import Image from 'next/image'
-import { ArrowLeft, Download } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Download } from 'lucide-react'
 import { LightningDecor } from '@/components/lightning-decor'
 import { HeroLink } from '@/components/hero-link'
+import { getLocaleConfig, type LocaleProps } from '@/lib/i18n'
 
-export function Hero() {
+export function Hero({ locale, messages: t }: LocaleProps) {
+  const dir = getLocaleConfig(locale).dir
+  const Arrow = dir === 'rtl' ? ArrowLeft : ArrowRight
+
   return (
     <section
       id="hero"
@@ -16,22 +20,17 @@ export function Hero() {
       />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8">
-        {/* Text */}
-        <div className="text-center lg:text-right">
+        <div className="text-center lg:text-start">
           <span className="reveal in-view inline-flex items-center gap-2 rounded-full border border-neon/30 bg-neon/10 px-4 py-1.5 text-xs font-semibold text-neon">
-            زوّد وإنطلق · التطبيق الخدمي الأوّل في ليبيا
+            {t.hero.badge}
           </span>
           <h1 className="mt-6 font-display text-4xl font-black leading-[1.15] text-white text-balance sm:text-5xl lg:text-6xl">
-          شن أكثر حاجة تضايقك وانت برا؟
-
+            {t.hero.title}
             <br />
-            <span className="text-neon text-neon-glow">زوّاد جاي بيحلها 
-            </span>
+            <span className="text-neon text-neon-glow">{t.hero.titleHighlight}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/75 text-pretty lg:mx-0 lg:text-lg">
-            خدمة ذكية لاستئجار الباوربانك من أقرب محطة ZWAD، واستخدامه أثناء
-            التنقل، ثم إرجاعه في أي محطة قريبة. الدفع بسهولة وأمان عبر تطبيق
-            Primo.
+            {t.hero.description}
           </p>
 
           <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row lg:justify-start">
@@ -40,19 +39,18 @@ export function Hero() {
               className="flex items-center justify-center gap-2 rounded-xl bg-emerald px-7 py-3.5 font-bold text-white shadow-neon transition-transform duration-200 hover:-translate-y-0.5"
             >
               <Download className="size-5" />
-              حمّل التطبيق
+              {t.common.downloadApp}
             </HeroLink>
             <HeroLink
               href="#how"
               className="flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
             >
-              اعرف كيف تعمل
-              <ArrowLeft className="size-5" />
+              {t.common.learnHow}
+              <Arrow className="size-5" />
             </HeroLink>
           </div>
         </div>
 
-        {/* Visual */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative animate-float-slow">
             <div
@@ -61,7 +59,7 @@ export function Hero() {
             />
             <Image
               src="/zwadHeroSec.png"
-              alt="محطة ZWAD وتطبيقها مع الباوربانك ورمز QR"
+              alt={t.hero.imageAlt}
               width={1200}
               height={880}
               priority

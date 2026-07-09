@@ -3,19 +3,21 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { CloseIcon, DownloadIcon, MenuIcon } from '@/components/icons'
+import { LanguageSwitcher } from '@/components/language-switcher'
+import type { LocaleProps } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { smoothScrollTo } from '@/lib/smooth-scroll'
 
-const links = [
-  { label: 'الرئيسية', href: '#hero' },
-  { label: 'كيف تعمل', href: '#how' },
-  { label: 'محطاتنا', href: '#stations' },
-  { label: 'التطبيق والدفع', href: '#primo' },
-  { label: 'الأسئلة الشائعة', href: '#faq' },
-  { label: 'تواصل معنا', href: '#contact' },
+const navKeys = [
+  { key: 'home' as const, href: '#hero' },
+  { key: 'how' as const, href: '#how' },
+  { key: 'stations' as const, href: '#stations' },
+  { key: 'primo' as const, href: '#primo' },
+  { key: 'faq' as const, href: '#faq' },
+  { key: 'contact' as const, href: '#contact' },
 ]
 
-export function SiteHeader() {
+export function SiteHeader({ locale, messages: t }: LocaleProps) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -33,6 +35,11 @@ export function SiteHeader() {
     history.replaceState(null, '', href)
   }
 
+  const links = navKeys.map((item) => ({
+    label: t.header.nav[item.key],
+    href: item.href,
+  }))
+
   return (
     <header
       className={cn(
@@ -47,12 +54,12 @@ export function SiteHeader() {
           href="#hero"
           onClick={(e) => handleNav(e, '#hero')}
           className="flex items-center"
-          aria-label="ZWAD الصفحة الرئيسية"
+          aria-label={t.header.ariaHome}
         >
           <span className="relative block h-9 w-28 overflow-hidden rounded-lg sm:h-10 sm:w-32">
             <Image
               src="/zwad.png"
-              alt="ZWAD"
+              alt={t.common.brand}
               fill
               priority
               className="scale-[1.35] object-cover object-center"
@@ -66,7 +73,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNav(e, link.href)}
-              className="relative text-sm font-medium text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:right-0 after:h-0.5 after:w-0 after:bg-neon after:transition-all hover:after:w-full"
+              className="relative text-sm font-medium text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:end-0 after:h-0.5 after:w-0 after:bg-neon after:transition-all hover:after:w-full"
             >
               {link.label}
             </a>
@@ -74,20 +81,20 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* <ThemeToggle /> */}
+          <LanguageSwitcher locale={locale} className="hidden sm:inline-flex" />
           <a
             href="#download"
             onClick={(e) => handleNav(e, '#download')}
             className="hidden items-center gap-2 rounded-xl bg-emerald px-5 py-2.5 text-sm font-bold text-white shadow-neon transition-transform duration-200 hover:-translate-y-0.5 sm:flex"
           >
             <DownloadIcon className="size-4" />
-            حمّل التطبيق
+            {t.common.downloadApp}
           </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             className="grid size-10 place-items-center rounded-lg text-white lg:hidden"
-            aria-label={open ? 'إغلاق القائمة' : 'فتح القائمة'}
+            aria-label={open ? t.header.ariaCloseMenu : t.header.ariaOpenMenu}
             aria-expanded={open}
           >
             {open ? <CloseIcon className="size-6" /> : <MenuIcon className="size-6" />}
@@ -98,7 +105,7 @@ export function SiteHeader() {
       <div
         className={cn(
           'overflow-hidden border-t border-white/10 bg-brand-deep/95 backdrop-blur-md transition-[max-height] duration-300 lg:hidden',
-          open ? 'max-h-96' : 'max-h-0',
+          open ? 'max-h-[28rem]' : 'max-h-0',
         )}
       >
         <nav className="flex flex-col gap-1 px-4 py-4">
@@ -112,13 +119,14 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <LanguageSwitcher locale={locale} className="mt-2 w-fit" />
           <a
             href="#download"
             onClick={(e) => handleNav(e, '#download')}
             className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-emerald px-5 py-3 text-sm font-bold text-white"
           >
             <DownloadIcon className="size-4" />
-            حمّل التطبيق
+            {t.common.downloadApp}
           </a>
         </nav>
       </div>

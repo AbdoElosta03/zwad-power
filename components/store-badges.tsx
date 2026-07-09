@@ -1,4 +1,16 @@
 import { cn } from '@/lib/utils'
+import type { Messages } from '@/lib/i18n'
+
+const STORE_LINKS = {
+  zwad: {
+    googlePlay: 'https://play.google.com/store/apps/details?id=kh.standard.zwad',
+    appStore: 'https://apps.apple.com/us/app/zwad/id6745175895?l=a',
+  },
+  primo: {
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.tabadull.souqprimo&hl=ar',
+    appStore: 'https://apps.apple.com/om/app/primotech/id1459370779?l=ar',
+  },
+} as const
 
 function GooglePlayIcon() {
   return (
@@ -20,50 +32,55 @@ function AppleIcon() {
 }
 
 export function StoreBadges({
+  messages: t,
+  app = 'zwad',
   className,
   variant = 'dark',
 }: {
+  messages: Messages
+  app?: 'zwad' | 'primo'
   className?: string
   variant?: 'dark' | 'light'
 }) {
+  const links = STORE_LINKS[app]
+  const badges = app === 'primo' ? t.primoStoreBadges : t.storeBadges
   const base =
     variant === 'dark'
       ? 'bg-black text-white hover:bg-black/85'
       : 'bg-white text-brand-deep ring-1 ring-black/10 hover:bg-white/90'
+
   return (
     <div className={cn('flex flex-wrap items-center gap-3', className)}>
       <a
-        href="https://play.google.com/store/apps/details?id=kh.standard.zwad"
+        href={links.googlePlay}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
           'flex items-center gap-3 rounded-xl px-4 py-2.5 transition-transform duration-200 hover:-translate-y-0.5',
           base,
         )}
-        aria-label="حمّل التطبيق من Google Play"
+        aria-label={badges.googlePlayAria}
       >
         <GooglePlayIcon />
-        <span className="text-right leading-tight">
-          <span className="block text-[10px] opacity-70">GET IT ON</span>
-          <span className="block font-display text-sm font-bold">Google Play</span>
+        <span className="text-start leading-tight">
+          <span className="block text-[10px] opacity-70">{badges.googlePlayTop}</span>
+          <span className="block font-display text-sm font-bold">{badges.googlePlayBottom}</span>
         </span>
       </a>
       <a
-        href="https://apps.apple.com/us/app/zwad/id6745175895?l=a"
+        href={links.appStore}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
           'flex items-center gap-3 rounded-xl px-4 py-2.5 transition-transform duration-200 hover:-translate-y-0.5',
-          variant === 'dark'
-            ? 'bg-black text-white hover:bg-black/85'
-            : 'bg-white text-brand-deep ring-1 ring-black/10 hover:bg-white/90',
+          base,
         )}
-        aria-label="حمّل التطبيق من App Store"
+        aria-label={badges.appStoreAria}
       >
         <AppleIcon />
-        <span className="text-right leading-tight">
-          <span className="block text-[10px] opacity-70">Download on the</span>
-          <span className="block font-display text-sm font-bold">App Store</span>
+        <span className="text-start leading-tight">
+          <span className="block text-[10px] opacity-70">{badges.appStoreTop}</span>
+          <span className="block font-display text-sm font-bold">{badges.appStoreBottom}</span>
         </span>
       </a>
     </div>

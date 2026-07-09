@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { HeroLink } from '@/components/hero-link'
+import type { Messages } from '@/lib/i18n'
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -20,19 +21,29 @@ function FacebookIcon({ className }: { className?: string }) {
   )
 }
 
-const quickLinks = [
-  { label: 'الرئيسية', href: '#hero' },
-  { label: 'كيف تعمل', href: '#how' },
-  { label: 'محطاتنا', href: '#stations' },
-  { label: 'التطبيق والدفع', href: '#primo' },
+const quickLinkKeys = [
+  { key: 'home' as const, href: '#hero' },
+  { key: 'how' as const, href: '#how' },
+  { key: 'stations' as const, href: '#stations' },
+  { key: 'primo' as const, href: '#primo' },
 ]
 
-const infoLinks = [
-  { label: 'عن ZWAD', href: '#hero' },
-  { label: 'الأسئلة الشائعة', href: '#faq' },
-]
+export function SiteFooter({ messages: t }: { messages: Messages }) {
+  const quickLinks = quickLinkKeys.map((item) => ({
+    label: t.header.nav[item.key],
+    href: item.href,
+  }))
 
-export function SiteFooter() {
+  const infoLinks = [
+    { label: t.footer.aboutZwad, href: '#hero' },
+    { label: t.header.nav.faq, href: '#faq' },
+  ]
+
+  const social = [
+    { icon: InstagramIcon, label: t.footer.social.instagram },
+    { icon: FacebookIcon, label: t.footer.social.facebook },
+  ]
+
   return (
     <footer id="contact" className="scroll-mt-24 bg-brand-deep text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
@@ -40,20 +51,16 @@ export function SiteFooter() {
           <span className="relative block h-12 w-40 overflow-hidden rounded-lg">
             <Image
               src="/zwad.png"
-              alt="ZWAD"
+              alt={t.common.brand}
               fill
               className="scale-[1.3] object-cover object-center"
             />
           </span>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            شبكة ذكية لاستئجار الباوربانك في ليبيا. طاقة تدوم، أينما كنت. زوّد
-            وإنطلق.
+            {t.footer.description}
           </p>
           <div className="mt-6 flex gap-3">
-            {[
-              { icon: InstagramIcon, label: 'Instagram' },
-              { icon: FacebookIcon, label: 'Facebook' },
-            ].map((s) => (
+            {social.map((s) => (
               <a
                 key={s.label}
                 href="#"
@@ -67,7 +74,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white">روابط سريعة</h3>
+          <h3 className="font-display font-bold text-white">{t.footer.quickLinksTitle}</h3>
           <ul className="mt-4 space-y-2.5">
             {quickLinks.map((l) => (
               <li key={l.label}>
@@ -83,7 +90,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white">معلومات</h3>
+          <h3 className="font-display font-bold text-white">{t.footer.infoTitle}</h3>
           <ul className="mt-4 space-y-2.5">
             {infoLinks.map((l) => (
               <li key={l.label}>
@@ -99,7 +106,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="font-display font-bold text-white">تواصل معنا</h3>
+          <h3 className="font-display font-bold text-white">{t.footer.contactTitle}</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/60">
             <li className="flex items-center gap-3">
               <Mail className="size-4 shrink-0 text-neon" />
@@ -111,7 +118,7 @@ export function SiteFooter() {
             </li>
             <li className="flex items-center gap-3">
               <MapPin className="size-4 shrink-0 text-neon" />
-              <span>ليبيا طرابلس - طريق الشط </span>
+              <span>{t.footer.address}</span>
             </li>
           </ul>
         </div>
@@ -119,7 +126,10 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <p className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-white/50 sm:px-6 lg:px-8">
-          © 2024 ZWAD. جميع الحقوق محفوظة.
+          {t.footer.copyright}
+        </p>
+        <p className="mx-auto max-w-7xl px-4 pb-5 text-center text-[11px] text-white/30 sm:px-6 lg:px-8">
+          Map data © OpenStreetMap, tiles © CARTO
         </p>
       </div>
     </footer>
